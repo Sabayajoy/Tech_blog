@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech  Journey - your guide to getting started in tech</title>
+    <!--Inline styling-->
+    <style>
+       *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+       }
+       
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background:linear-gradient(132deg ,#667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container{
+            max-width: 1200px;
+            margin:  0 auto;
+            padding: 20px;
+
+        }
+
+        header{
+            background: rgba(255,255,255,0.95);
+            backdrop-filter:blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px rgba (0,0,0.1);
+            text-align: center;
+        }
+
+        .logo{
+            font-size: 2.5rem;
+            font-weight: bold;
+             background:linear-gradient(45deg ,#667eea 0%, #764ba2 100%);
+             background-clip: text;
+             -webkit-text-fill-color: transparent;
+             margin-bottom: 0.5rem;
+
+        }
+
+        .tagline{
+            color: #666;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+
+        }
+
+        nav{
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+
+        }
+    nav a {
+        text-decoration: none;
+        color: #667eea;
+        font-weight: 500;
+        padding: 0.5rem , 1rem;
+        border-radius: 25px;
+        transition: all 0,3s ease;
+    }
+
+    .nav a:hover{
+        background-color: #667eea;
+        color: white;
+        transform: translateY(-2px);
+
+    }
+
+    .hero{
+            background: rgba(255,255,255,0.95);
+            backdrop-filter:blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px rgba (0,0,0.1);
+            text-align: center;
+    }
+
+    .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            color:black;
+             background:linear-gradient(45deg ,#667eea 0%, #764ba2 100%);
+             background-clip: text;
+             -webkit-text-fill-color: transparent;
+             margin-bottom: 1rem;
+
+
+    }
+    .hero p{
+            color:black;
+            font-size: 1.3rem;
+            margin:0 auto 2rem; 
+            max-width: 600px;
+    } 
+    .cta-button{
+        display: inline-block;
+        background:linear-gradient(45deg ,#667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 1rem,2rem;
+        text-decoration: none;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba (102,126,234,0.4);
+    }
+        
+
+    .cta-button:hover{
+        transform:translateY(-3px) ;
+        box-shadow:  0 6px 20px rgba (102,126,234,0.6);;
+
+    }
+
+    .content{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 2rem;
+        margin-bottom: 2rem;
+
+
+    }
+    .main-content{
+        background:white;
+            backdrop-filter:blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 8px  32px rgba (0,0,0.1);
+        
+
+    }
+ 
+   .sidebar{
+         display: flex;
+         flex-direction: column;
+         gap: 1.5rem;
+         margin-bottom: 1rem;
+}
+
+.widget{
+       background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 1.5rem;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        gap: 1.5rem;
+}
+
+.h2 {
+color:black;
+margin-bottom: 1rem;
+font-size: 1.8rem;
+}
+
+.h3 {
+color: #667eea;
+margin-bottom: 0.5rem;
+font-size: 1.3rem;
+}
+
+.step {
+background: #f8f9ff;
+border-left: 4px solid #667eea;
+padding: 1.5rem;
+margin-bottom: 1.5rem;
+border-radius: 0 10px 10px 0;
+transition: transform 0.3s ease;
+gap: 1rem
+;
+}
+
+.step:hover {
+transform: translateX(5px);
+}
+
+.step-number {
+background: #667eea;
+color: white;
+width: 30px;
+height: 30px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: bold;
+margin-bottom: 1rem;
+}
+
+.resources-list {
+list-style: none;
+
+
+
+}
+
+.resources-list li {
+padding: 0.5rem 0;
+border-bottom: 1px solid #eee;
+}
+
+.resources-list a {
+color: #667eea;
+text-decoration: none;
+transition: color 0.3s ease;
+}
+
+.resources-list a:hover {
+
+color: #764ba2;
+}
+
+.newsletter {
+text-align: center;
+}
+
+.newsletter input {
+width: 100%;
+padding: 0.75rem;
+border: 2px solid #667eea;
+border-radius: 25px;
+margin-bottom: 1rem;
+outline: none;
+}
+
+.newsletter button {
+background: linear-gradient(45deg, #667eea, #764ba2);
+color: white;
+border: none;
+padding: 0.75rem 1.5rem;
+border-radius: 25px;
+cursor: pointer;
+font-weight: bold;
+transition: transform 0.3s ease;
+}
+
+.newsletter button:hover {
+transform: translateY(-2px);
+}
+
+footer {
+background: rgba(255, 255, 255, 0.95);
+backdrop-filter: blur(10px);
+border-radius: 15px;
+padding: 2rem;
+text-align: center;
+box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+.content {
+grid-template-columns: 1fr;
+}
+
+.hero h1 {
+font-size: 2rem;
+color:blanchedalmond;
+}
+
+nav {
+gap: 1rem;
+}
+}
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class ="container">
+        <header>
+            <div class="logo">Tech Journey</div>
+            <p class = "tagline">Your road map to  a sucessful tech career</p>
+            <nav>
+                 <a href="#start">getting started </a>
+                 <a href="#paths">path </a>
+                 <a href="#resources">Resources</a>
+                 <a href="#community">Community </a>
+                  <a href="#blog">blog </a>
+
+            </nav>
+        </header>
+
+        <section class="hero">
+            <h1>Start your Tech Journey today</h1>
+            <p>Whether you are a compelete beginner or looking to switvh careers we'll guide you every step of breaking into the tech industry</p>
+             <a href="#start" class = "cta-button"> Begin your journey</a>
+             </div>
+        </section>
+
+        <div class="Content "> 
+            <main class ="main-content"> 
+                <article id="start">
+                    <h2>How to get started in Tech : A compelete RoadMap</h2>
+                    <p> Breaking into tech doeant require a computer science degree or years of experince. With the right apporachand dedication anyone can build a succefully tech career, Here.s is yiur step by step guide</p>
+                   <div class="step">
+                    <div class="Step-Number 1">1</div>
+                    <h3>Discover your path</h3>
+                    <p>Tech isnt just coding ! Explore different roles like Web developement , data scince, ui/ux design , cyber security, product management or digital amrketing, Each path offer unique oppouritiesand challenges
+                
+                    </p>
+                    
+
+                       <div class="Step-Number 2">2</div>
+                    <h3>Choose your learning method </h3>
+                    <p>Pick what work for yoU :Online courses(Coursera , Udemy) cooding bootcamps , self-study with free resources or tradiotional education.The key is consitency , not prefection
+                
+                    </p>
+                     
+                   
+                       <div class="Step-Number 3">3</div>
+                    <h3>Build projects </h3>
+                    <p> Theary is important but projects show you acn apply what you've learned , Start small with personal project, the graudualltake mare complex cahllenges ,Documrnt everythingon Github
+                
+                    </p>
+                     
+
+                       <div class="Step-Number 4">4</div>
+                    <h3>Network and connect</h3>
+                    <p> Join Tech communities , attend meetups ( Virtual or in person), engage on linkedn andf twitter ,Tech tech community is incrediblu welcmomh to the new commers who genuine interest
+                
+                    </p>
+                    
+                     
+                      <div class="Step-Number 5">5</div>
+                    <h3>Apply Strategically</h3>
+                    <p> Dont wait untill you feel ready - ypou neber will. Apply to junoir positions,internshipsnd entry level roles,Tailor your resume and portfolio to each application
+                
+                    </p>
+                
+                   </div>
+                <h2> Popular Tech Career Paths</h2>
+                <p>Here are some of the most in-demand tech careers,prefect for beginners :</p>
+
+                <h3>Software developement</h3>
+                <p>Build application websites and software systems, learn langauges like Javascript , python or java, High Demnd and grate remote oppurnities</p>
+                
+                <h3>UI/UX Design</h3>
+                <p>Design user experinece and interface.Combine creativity with probrlm solving.Tools includeFigma , Sketch and adobe creative suite</p>
+                
+                <h3>Data Science</h3>
+                <p>Analyze Data to drive business decisionsLearn Python sql and statistical analysis</p>
+                
+                <h3>Cyber security</h3>
+                <p>Priect organizations from digital threats.Hight growth fiels with execellemt job security and competitive slaries</p>
+                
+                <h3>Product management</h3>
+                <p>Bridge technical and business team. Great for those with stron communication skills and strategic thinking</p>
+                
+                </article>
+            </main>
+
+             <aside class="sidebar">
+                <div class="widget">
+                    <h3>Quick start Resources</h3>
+                    <ul class="resources-list">
+                        <li><a href="#">Free Code Camp- Learn to code</a></li>
+                        <li><a href="#">Codeacademy - Interactive courses</a></li>
+                        <li><a href="#">Githib - Version Control</a></li>
+                        <li><a href="#">Stackoverflow - developer commmnity</a></li>
+                        <li><a href="#">Linkedn Learning- Professional Skills</a></li>
+                    </ul>
+                </div>
+
+                <div class="widget">
+                    <h3>This week's Tip</h3>
+                    <p>Start small , achieveable goals.Instead of "learn programming", "Compelete one html tutorial this week " Small wins build momentum!</p>
+                </div>
+
+
+        <div class="widget newsletter"> 
+            <h3>Stay updated</h3>
+            <p> Get weekly tips resourcesand job oppurnities delivers to your inbox</p>
+            <input type="email" name="Enter your email" id="emailInput">
+            <button onclick="Subscribe()">Subscribe</button>
+
+        </div>
+
+        <div class="widget">
+            <h3> Sucess stories</h3>
+            <p><strong>Sarah.k</strong> Went form  barista to software develop[erin 8 monthst through self 0studyand bootcamp</p>
+             <p><strong>Mike.r</strong> Went form  barista to software develop[erin 8 monthst through self 0studyand bootcamp</p>
+        </div>
+             </aside>
+        </div>
+
+         <footer>
+            <p>&copy:2025 TechJourney.Built with passion for aspring tech professional</p>
+            <p>Ready to  start your journey ? The Tech workd is waiting for you</p>
+         </footer>
+    </div>
+
+    <!--Javascript-->
+    <script>
+        function Subscribe() {
+            const email = document.getElementById('emailInput').value;
+            if (email){
+                alert('Thank for subcribing!we\'ll send you amazingtech content soon')
+                document.getElementById('emailInput'),value ='';
+            }
+            else {
+                alert('Please enter a valid email address')
+            }
+        }
+
+        // smooth scrolling for navigation links 
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click',function (e) {
+                e.preventDefault();
+                const target= document.querySelector(this.getAttribute('href'));
+                if(target){
+                    target.scrollIntoView({
+                        behavior :'smooth',
+                        block :'start'
+                    });
+                }
+            });
+
+    
+                    
+                });
+            // add interactive aninamtions
+            const steps = document.querySelectorAll('.step');
+            const observer = new IntersectionObserver((entries) =>{
+                entries.forEach(entry =>{
+                    if ( entry.isIntersecting){
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform='translateY(0)';
+
+                    }
+                });
+            });
+             steps.forEach(step =>{
+                step.style.opacity ='0'
+                step.style.transform ='translateY(20px)';
+                step.style.transition ='opacity 0.6s ease, tenasform 0.6s ease';
+                observer.observe(step);
+             });
+            
+        
+    </script>
+</body>
+</html>
